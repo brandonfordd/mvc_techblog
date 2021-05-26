@@ -1,7 +1,7 @@
 // An index file to gather the models and export them for use
 
 // User model
-const User = require('./User');
+const User = require('./User.js');
 // Post model
 const Post = require('./Post');
 // Comment model
