@@ -8,6 +8,7 @@
 
   <div>
     <button type="submit">add comment</button>
+    <a href="/api/posts/edit/{{post.id}}" class="edit-post-form ">add comment</button>
   </div>
 </form>
 {{/if}}
@@ -15,5 +16,6 @@
 {{> comments post.comments}}
 
 {{#if loggedIn}}
+<script src="/javascript/edit-post.js"></script>
 <script src="/javascript/comment.js"></script>
 {{/if}}

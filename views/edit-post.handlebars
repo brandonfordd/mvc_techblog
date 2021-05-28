@@ -12,7 +12,7 @@
       <textarea name="post-text">{{post.post_text}}</textarea>
     </div>
     <div>
-      Posted by you on {{format_date post.created_at}}
+      Poste by you on {{format_date post.created_at}}
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>

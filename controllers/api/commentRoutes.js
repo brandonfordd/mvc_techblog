@@ -9,7 +9,7 @@ const withAuth = require('../../utils/auth');
 // Routes
 
 // Get comments
-router.post('/', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const dbCommentData = await Comment.findAll(req.body, {})
     if (!dbCommentData) {
@@ -26,7 +26,6 @@ router.post('/', withAuth, async (req, res) => {
 
 // Post a new comment
 router.post('/', withAuth, async (req, res) => {
-  if (req.session)  {
     try {
       const dbCommentData = await Comment.create({
         comment_text: req.body.comment_text,
@@ -44,12 +43,11 @@ router.post('/', withAuth, async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  }
 });
 
 
 
-// Post a new comment
+// delete a comment
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const dbCommentData = await Comment.destroy({
@@ -66,7 +64,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch(err) {
     console.log(err);
     res.status(500).json(err);
-  }s
+  }
 });
 
 

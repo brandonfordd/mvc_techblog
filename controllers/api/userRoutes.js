@@ -74,10 +74,6 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-
-
-
-
 // POST /api/users -- add a new user
 router.post('/', async (req, res) => {
   try {
