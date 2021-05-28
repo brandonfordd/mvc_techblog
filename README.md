@@ -58,8 +58,32 @@ Clone the repository to your local development environment.
 git clone https://github.com/brandonfordd/e_commerce_backend.git
 ```
 
-Run npm install to install all dependencies. To use the application locally, run node server.js in your CLI, 
-and then open http://localhost:3000 in your preferred browser.
+Run to install all dependencies. 
+```
+npm i
+```
+
+To use the application locally, run to start database in mysql.
+```
+mysql -u root < db/schema.sql
+```
+
+Then run to seed test information into database.
+```
+npm run seed
+```
+
+Then run to start you server
+```
+npm run start 
+```
+
+afterwards open http://localhost:3001/ in preferred browser to view the front end.
+
+Alternately you can visit this link to view the production site. 
+```
+https://immense-lake-51774.herokuapp.com/ 
+```
 
 ## Usage 
 ```md
