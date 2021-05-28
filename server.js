@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-  secret: 'lavendar',
+  secret: process.env.DB_SESSION_SECRET,
   cookie: {MaxAge: 1000000},
   resave: false,
   saveUninitialized: true,
