@@ -12,24 +12,24 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Routes
 
-// GET /api/users -- get all users
-router.post('/', withAuth, async (req, res) => {
-  try {
-    const dbUserData = await User.findAll(req.body, {
-        // when the data is sent back, exclude the password property
-        attributes: { exclude: ['password'] }
-    })
-    if (!dbUserData) {
-      // if no user is found, return an error
-      res.status(404).json({ message: 'No user found with this id' });
-      return;
-    } 
-      res.json(dbUserData);
-  } catch(err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+// // GET /api/users -- get all users
+// router.post('/', withAuth, async (req, res) => {
+//   try {
+//     const dbUserData = await User.findAll(req.body, {
+//         // when the data is sent back, exclude the password property
+//         attributes: { exclude: ['password'] }
+//     })
+//     if (!dbUserData) {
+//       // if no user is found, return an error
+//       res.status(404).json({ message: 'No user found with this id' });
+//       return;
+//     } 
+//       res.json(dbUserData);
+//   } catch(err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 
 
